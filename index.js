@@ -17,7 +17,6 @@ var interval = setInterval(function() {
   crawl();
 
 }, config.period*1000);
-//clearInterval(interval);
 
 function crawl()
 {
@@ -27,19 +26,20 @@ function crawl()
 
   request(domain, function(error, response, body) {
 
-    console.log(error);
+ //console.log(error);
     if(error)
     {
 
-      slack.send({
+      var success = slack.send({
            text: 'Tarantula cannot access '+ domain + '!!'
            //,
            //  channel: '#tarantula',
            //  username: 'TarantulaBot'
          });
 
+        //console.log(success);
 
-      console.log('Tarantule cannot access '+domain+'!')
+      console.log('Tarantula cannot access '+domain+'!')
     }
 
 
