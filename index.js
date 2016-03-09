@@ -30,12 +30,12 @@ function crawl()
 
   request(domain, function(error, response, body) {
 
- //console.log(error);
-    if(error)
+   
+    if(error || response.statusCode != 200)
     {
 
       var success = slack.send({
-           text: 'Tarantula cannot access '+ domain + '!!'
+           text: 'Tarantula cannot access '+ domain + '!!' +' Response code: '+ response.code
            //,
            //  channel: '#tarantula',
            //  username: 'TarantulaBot'
@@ -43,7 +43,7 @@ function crawl()
 
         //console.log(success);
 
-      console.log('Tarantula cannot access '+domain+'!')
+      console.log('Tarantula cannot access '+ domain + '!!' +' Response code: '+ response.code)
     }
 
 
