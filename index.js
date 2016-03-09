@@ -12,6 +12,10 @@ var options = null;
 var slack = new Slack(config.slack_webhook_url,options);
 
 
+console.log('Tarantula bot started.');
+crawl();
+
+
 var interval = setInterval(function() {
   console.log('crawling');
   crawl();
