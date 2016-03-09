@@ -1,0 +1,8 @@
+{
+  "period": 900,  
+  "slack_webhook_url": "https://hooks.slack.com/services/T0KT9/B0R2A/zjvSQF",
+  "tested_domains": [
+    "http://dl.io",
+    "http://dr.io"
+  ]
+}
